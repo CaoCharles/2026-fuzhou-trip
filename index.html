@@ -169,7 +169,7 @@ tailwind.config={theme:{extend:{
     <div class="text-sm font-bold mb-2"><i class="fa-solid fa-cloud-sun text-gold text-lg"></i> 天氣與地圖</div>
     <div class="space-y-2 text-[13px]">
       <a href="https://weather.cma.cn/web/weather/58847.html" target="_blank" rel="noopener" class="flex items-center justify-between bg-rice rounded-xl px-3 py-2 border border-line">中國天氣網・福州 <i class="fa-solid fa-arrow-up-right-from-square text-sub"></i></a>
-      <a href="https://uri.amap.com/search?keyword=%E7%A6%8F%E5%B7%9E" target="_blank" rel="noopener" class="flex items-center justify-between bg-rice rounded-xl px-3 py-2 border border-line">高德地圖・福州搜尋 <i class="fa-solid fa-arrow-up-right-from-square text-sub"></i></a>
+      <a href="https://uri.amap.com/search?keyword=%E7%A6%8F%E5%B7%9E&city=%E7%A6%8F%E5%B7%9E&callnative=0" target="_blank" rel="noopener" class="flex items-center justify-between bg-rice rounded-xl px-3 py-2 border border-line">高德地圖・福州搜尋 <i class="fa-solid fa-arrow-up-right-from-square text-sub"></i></a>
     </div>
   </div>
   <div class="bg-card rounded-2xl shadow-soft p-4 border border-line mb-4">
@@ -208,12 +208,12 @@ tailwind.config={theme:{extend:{
 </div>
 
 <script>
-const A = q => 'https://uri.amap.com/search?keyword=' + encodeURIComponent(q);
-const DIR = (from,to) => 'https://uri.amap.com/navigation?from=' + encodeURIComponent(from) + '&to=' + encodeURIComponent(to) + '&mode=car';
+const A = q => 'https://uri.amap.com/search?keyword=' + encodeURIComponent(q) + '&city=' + encodeURIComponent('福州') + '&callnative=0';
+const DIR = (from,to) => 'https://uri.amap.com/navigation?from=' + encodeURIComponent(from) + '&to=' + encodeURIComponent(to) + '&mode=car&policy=1&callnative=0';
 
 const HOTELS = [
-  ['Day 1-2','上下杭附近','晚上可走上下杭、煙台山，白天去三坊七巷方便'],
-  ['Day 3-4','西禪寺附近','節奏放慢，安排寺院、公園、百貨與室內備案'],
+  ['Day 1-2','寻见・春日里｜The Beauty of The East 設計師民宿','06/27 入住，2 晚；望江一線江景親子房，近上下杭與煙台山'],
+  ['Day 3-4','兩室一廳雙房｜恆大天璟／ICC／寶龍／蘇寧','06/29 入住，2 晚；整套出租，2 室 1 廳 1 衛'],
 ];
 
 const DAYS = [
@@ -222,10 +222,10 @@ const DAYS = [
     {type:'move',t:'船班',route:'南竿福澳港 → 福州琅岐',from:'南竿福澳港',to:'福州琅岐客運碼頭',opts:[
       {means:'兩馬小三通船班',time:'以船票為準',fare:'依票券',note:'建議提前到港，預留通關與行李時間'}
     ]},
-    {type:'move',t:'抵達後',route:'琅岐 → 上下杭飯店',from:'福州琅岐客運碼頭',to:'上下杭歷史文化街區',opts:[
+    {type:'move',t:'抵達後',route:'琅岐 → 春日里民宿',from:'福州琅岐客運碼頭',to:'福州 寻见 春日里 The Beauty of The East',opts:[
       {means:'叫車或包車',time:'約 60-90 分',fare:'依當日路況',note:'爸媽同行建議直接叫車進城'}
     ]},
-    {type:'spot',t:'下午',name:'入住上下杭附近飯店',stay:'休息',note:'先補水、整理行李，晚上再出門。',map:'上下杭歷史文化街區'},
+    {type:'spot',t:'下午',name:'入住：寻见・春日里',stay:'休息',note:'The Beauty of The East 設計師民宿；望江一線江景親子房，先補水、整理行李。',map:'福州 寻见 春日里 The Beauty of The East'},
     {type:'spot',t:'晚上',name:'上下杭歷史文化街區',stay:'1.5-2h',note:'老商埠街屋、會館與河道夜色，很適合第一晚暖身。',map:'上下杭歷史文化街區'},
     {type:'meal',t:'晚餐',name:'福州小吃初體驗',stay:'1h',note:'魚丸、肉燕、撈化、荔枝肉先挑幾樣，不要吃太撐。',map:'上下杭 美食'},
   ]},
@@ -237,14 +237,15 @@ const DAYS = [
     {type:'spot',t:'傍晚',name:'煙台山歷史風貌區',stay:'2h',note:'洋樓、坡道、咖啡館與夜景，傍晚去最舒服。',map:'煙台山歷史風貌區'},
     {type:'meal',t:'晚上',name:'煙台山或倉山晚餐',stay:'1h',note:'吃完可看閩江夜景，累了就直接叫車回飯店。',map:'煙台山 美食'},
   ]},
-  {key:'D3',date:'06/29 一',city:'上下杭・西禪寺',title:'換飯店，西禪寺周邊慢遊',seg:[
+  {key:'D3',date:'06/29 一',city:'上下杭・第二間民宿',title:'換到兩房民宿，西禪寺周邊慢遊',seg:[
     {type:'go',t:'上午',name:'退房與行李轉移',stay:'—',note:'上午不安排遠點，保留移動與休息時間。',map:'上下杭歷史文化街區'},
-    {type:'move',t:'中午',route:'上下杭 → 西禪寺附近飯店',from:'上下杭歷史文化街區',to:'福州西禪寺',opts:[
+    {type:'move',t:'中午',route:'春日里 → 兩房民宿',from:'福州 寻见 春日里 The Beauty of The East',to:'福州 恒大天璟 ICC 宝龙 苏宁 三坊七巷 烟台山 华润',opts:[
       {means:'叫車',time:'約 20-35 分',fare:'依路況',note:'帶行李最省力'}
     ]},
-    {type:'meal',t:'午餐',name:'飯店附近簡單午餐',stay:'1h',note:'先找近的，下午再進寺院。',map:'西禪寺 美食'},
+    {type:'spot',t:'中午',name:'入住：兩室一廳雙房',stay:'休息',note:'恆大天璟／ICC／寶龍／蘇寧／三坊七巷／煙台山／華潤；整套出租 2 室 1 廳 1 衛。',map:'福州 恒大天璟 ICC 宝龙 苏宁 三坊七巷 烟台山 华润'},
+    {type:'meal',t:'午餐',name:'民宿附近簡單午餐',stay:'1h',note:'先找近的，下午再進寺院。',map:'福州 恒大天璟 美食'},
     {type:'spot',t:'下午',name:'西禪寺',stay:'1.5-2h',note:'寺院腹地大，適合爸媽慢慢走；注意防曬與補水。',map:'福州西禪寺'},
-    {type:'spot',t:'傍晚',name:'西湖公園或飯店休息',stay:'1h',note:'體力好就去公園，天熱或下雨就回飯店。',map:'福州西湖公園'},
+    {type:'spot',t:'傍晚',name:'西湖公園或民宿休息',stay:'1h',note:'體力好就去公園，天熱或下雨就回民宿。',map:'福州西湖公園'},
     {type:'spot',t:'晚上',name:'附近百貨公司',stay:'1.5h',note:'晚餐、冷氣與採買一次解決。',map:'福州 西禪寺 百貨'},
   ]},
   {key:'D4',date:'06/30 二',city:'福州慢遊',title:'公園、博物館、百貨備案日',seg:[
@@ -255,9 +256,9 @@ const DAYS = [
     {type:'meal',t:'晚上',name:'福州菜收尾',stay:'1h',note:'安排一餐正式一點的福州菜，吃佛跳牆或海鮮。',map:'福州 福州菜'},
   ]},
   {key:'D5',date:'07/01 三',city:'福州・琅岐・南竿',title:'伴手禮與回程船',alert:'回程是週三船班，請前一晚確認碼頭、開船時間與叫車時間。',seg:[
-    {type:'meal',t:'上午',name:'飯店早餐與退房',stay:'1h',note:'行李先整理好，證件與船票放隨身包。',map:'福州 西禪寺'},
+    {type:'meal',t:'上午',name:'民宿早餐與退房',stay:'1h',note:'行李先整理好，證件與船票放隨身包。',map:'福州 恒大天璟 ICC 宝龙 苏宁 三坊七巷 烟台山 华润'},
     {type:'spot',t:'上午',name:'伴手禮採買',stay:'1h',note:'魚丸、肉燕、茶點與乾貨依檢疫規定挑選，避免帶肉類製品。',map:'福州 伴手禮'},
-    {type:'move',t:'中午前後',route:'福州市區 → 琅岐碼頭',from:'福州西禪寺',to:'福州琅岐客運碼頭',opts:[
+    {type:'move',t:'中午前後',route:'兩房民宿 → 琅岐碼頭',from:'福州 恒大天璟 ICC 宝龙 苏宁 三坊七巷 烟台山 华润',to:'福州琅岐客運碼頭',opts:[
       {means:'叫車或包車',time:'約 60-90 分',fare:'依當日路況',note:'預留塞車與通關時間'}
     ]},
     {type:'go',t:'回程船',name:'福州琅岐 → 南竿福澳港',stay:'—',note:'依船票時間報到，回到馬祖後再銜接後續交通。',map:'福州琅岐客運碼頭'},
@@ -354,14 +355,14 @@ function moveCard(s){
         ${s.t?`<span class="text-[12px] font-bold text-ink bg-card border border-line rounded-full px-2 py-0.5">${s.t}</span>`:''}
         <span class="text-[13px] font-bold">${s.route}</span>
       </div>${opts}
-      ${s.from?`<a href="${DIR(s.from,s.to)}" target="_blank" rel="noopener" class="flex items-center justify-center gap-1 text-[12px] text-white bg-banyan rounded-lg py-1.5 mt-2.5 font-bold"><i class="fa-solid fa-route"></i> 高德查路線</a>`:''}
+      ${s.from?`<a href="${DIR(s.from,s.to)}" target="_blank" rel="noopener" class="flex items-center justify-center gap-1 text-[12px] text-white bg-banyan rounded-lg py-1.5 mt-2.5 font-bold"><i class="fa-solid fa-route"></i> 高德路線</a>`:''}
     </div>
   </div>`;
 }
 function spotCard(s){
   const ic = ICON[s.type] || ICON.spot;
   const stay = s.stay && s.stay !== '—' ? `<span class="text-[11px] text-sub bg-black/5 rounded-full px-2 py-0.5 whitespace-nowrap ml-2">停留 ${s.stay}</span>` : '';
-  const mapBtn = s.map ? `<a href="${A(s.map)}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-[11px] text-banyan bg-rice border border-line rounded-full px-2 py-0.5 mt-1.5"><i class="fa-solid fa-location-dot"></i> 地圖</a>` : '';
+  const mapBtn = s.map ? `<a href="${A(s.map)}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-[11px] text-banyan bg-rice border border-line rounded-full px-2 py-0.5 mt-1.5"><i class="fa-solid fa-location-dot"></i> 高德地圖</a>` : '';
   return `<div class="relative pl-11 pb-4">
     <div class="absolute left-0 top-0 w-9 h-9 rounded-full flex items-center justify-center text-white text-base ${ic[1]}"><i class="fa-solid ${ic[0]}"></i></div>
     <div class="bg-card border border-line rounded-2xl px-3 py-2.5 shadow-soft">
