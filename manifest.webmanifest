@@ -1,0 +1,24 @@
+{
+  "name": "福州 5 天 4 夜｜榕城慢遊",
+  "short_name": "福州慢遊",
+  "description": "福州三坊七巷、上下杭、煙台山與西禪寺 5 天 4 夜旅遊小幫手。",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eef2e3",
+  "theme_color": "#eef2e3",
+  "icons": [
+    {
+      "src": "assets/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
