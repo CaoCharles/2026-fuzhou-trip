@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#eef2e3">
+<title>福州 5 天 4 夜｜榕城慢遊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script>
+tailwind.config={theme:{extend:{
+  colors:{
+    paper:'#eef2e3', rice:'#faf7ef', card:'#fffdf7', ink:'#2e2b26', sub:'#777065',
+    line:'#ded4c1', banyan:'#496a50', river:'#426b73', cinnabar:'#a13d2d',
+    gold:'#a57a3b', mist:'#e4ebe0', blush:'#f3e2d5'
+  },
+  boxShadow:{soft:'0 8px 26px rgba(46,43,38,.08)', lift:'0 16px 42px rgba(46,43,38,.14)'}
+}}}
+</script>
+<style>
+  html,body{background:#eef2e3;-webkit-text-size-adjust:100%;overscroll-behavior-y:none}
+  *:not([class*="fa-"]){font-family:"Noto Serif TC","Songti TC","Songti SC","新細明體","PMingLiU",serif!important}
+  i[class*="fa-"]{font-family:"Font Awesome 6 Free","Font Awesome 6 Brands"!important}
+  body{color:#2e2b26}
+  *{-webkit-tap-highlight-color:transparent}
+  .app-shell{max-width:430px;padding-bottom:calc(6rem + env(safe-area-inset-bottom));}
+  .app-main{padding-bottom:env(safe-area-inset-bottom)}
+  .bottom-nav{max-width:430px;padding-bottom:calc(.5rem + env(safe-area-inset-bottom))}
+  .rounded-2xl,.rounded-xl{border-radius:8px!important}
+  .hero-img{aspect-ratio:4/3;object-fit:cover;object-position:center}
+  .hero-zoom{cursor:zoom-in}
+  .seal{writing-mode:vertical-rl;letter-spacing:.08em}
+  .tabpane{display:none}
+  .tabpane.active{display:block;animation:fade .28s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .tl::before{content:'';position:absolute;left:17px;top:8px;bottom:0;width:2px;background:#ded4c1}
+  .navbtn.active{color:#496a50}
+  .navbtn.active .ic{background:#496a50;color:#fff}
+  .paper-grain{background-image:
+    radial-gradient(circle at 18% 14%, rgba(161,61,45,.08), transparent 24%),
+    radial-gradient(circle at 86% 18%, rgba(66,107,115,.10), transparent 28%),
+    linear-gradient(135deg, rgba(255,255,255,.32), rgba(255,255,255,0));
+  }
+  .lattice{background-image:
+    linear-gradient(90deg, rgba(73,106,80,.08) 1px, transparent 1px),
+    linear-gradient(rgba(73,106,80,.08) 1px, transparent 1px);
+    background-size:18px 18px;
+  }
+  .lightbox{position:fixed;inset:0;z-index:60;display:none;background:rgba(28,25,22,.92);padding:calc(1rem + env(safe-area-inset-top)) 1rem calc(1rem + env(safe-area-inset-bottom));}
+  .lightbox.open{display:flex;align-items:center;justify-content:center;animation:fade .18s ease}
+  .lightbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+  .lightbox-close{position:absolute;top:calc(.75rem + env(safe-area-inset-top));right:1rem;width:44px;height:44px;border-radius:999px;background:rgba(255,253,247,.94);color:#2e2b26;display:flex;align-items:center;justify-content:center;font-size:20px}
+  body.modal-open{overflow:hidden;touch-action:none}
+  ::-webkit-scrollbar{width:0;height:0}
+  @media (prefers-reduced-motion:reduce){.tabpane.active{animation:none}*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body class="app-shell mx-auto relative paper-grain">
+
+<header class="sticky top-0 z-30 bg-paper/95 backdrop-blur border-b border-line px-5 pt-4 pb-3">
+  <div class="flex items-center justify-between gap-3">
+    <div>
+      <div class="text-xl font-black tracking-wide">福州 <span class="text-cinnabar">5</span> 天 <span class="text-cinnabar">4</span> 夜</div>
+      <div class="text-xs text-sub mt-0.5">2026 / 06 / 27 - 07 / 01 ｜ 馬祖南竿・琅岐・榕城</div>
+    </div>
+    <div class="seal bg-cinnabar text-white text-[11px] px-2 py-2 rounded-sm shadow-soft">榕城</div>
+  </div>
+</header>
+
+<main class="app-main px-4 pt-4">
+
+<section id="overview" class="tabpane active">
+  <figure class="bg-card rounded-2xl shadow-lift border border-line overflow-hidden mb-4">
+    <button type="button" class="hero-zoom block w-full text-left" onclick="openLightbox()" aria-label="放大福州旅遊主視覺">
+      <img src="assets/fuzhou-hero.png" alt="福州榕城慢遊主視覺" class="hero-img w-full">
+    </button>
+    <figcaption class="px-4 py-3">
+      <div class="flex items-center justify-between gap-3">
+        <div>
+          <div class="text-sm font-bold">三坊七巷・上下杭・煙台山・西禪寺</div>
+          <div class="text-[12px] text-sub mt-0.5">從南竿搭船到琅岐，慢慢進城的家庭路線</div>
+        </div>
+        <button type="button" onclick="openLightbox()" class="text-[12px] text-banyan bg-paper border border-line rounded-full px-3 py-1 shrink-0" aria-label="放大圖片"><i class="fa-solid fa-expand"></i></button>
+      </div>
+    </figcaption>
+  </figure>
+
+  <div class="grid grid-cols-2 gap-3 mb-4">
+    <div class="bg-card rounded-2xl shadow-soft p-4 border border-line">
+      <div class="text-xs text-sub mb-1"><i class="fa-solid fa-ship text-river text-base"></i> 去程</div>
+      <div class="text-lg font-black">06/27 六</div>
+      <div class="text-[12px] text-sub mt-1">南竿福澳港 → 福州琅岐</div>
+    </div>
+    <div class="bg-card rounded-2xl shadow-soft p-4 border border-line">
+      <div class="text-xs text-sub mb-1"><i class="fa-solid fa-ship text-cinnabar text-base"></i> 回程</div>
+      <div class="text-lg font-black">07/01 三</div>
+      <div class="text-[12px] text-sub mt-1">福州琅岐 → 南竿福澳港</div>
+    </div>
+  </div>
+
+  <div class="bg-card rounded-2xl shadow-soft p-4 border border-line mb-4">
+    <div class="text-sm font-bold mb-3"><i class="fa-solid fa-hotel text-banyan text-lg"></i> 住宿分區</div>
+    <div id="hotels" class="space-y-2 text-[13px]"></div>
+  </div>
+
+  <div class="bg-card rounded-2xl shadow-soft p-4 border border-line mb-4 lattice">
+    <div class="text-sm font-bold mb-2"><i class="fa-solid fa-route text-river text-lg"></i> 行程速覽</div>
+    <div id="ovglance" class="bg-card/85 rounded-xl border border-line overflow-hidden"></div>
+  </div>
+
+  <div class="bg-card rounded-2xl shadow-soft p-4 border border-line">
+    <div class="text-sm font-bold mb-2"><i class="fa-solid fa-bowl-food text-gold text-lg"></i> 這趟先吃</div>
+    <div class="grid grid-cols-2 gap-2 text-[12px]">
+      <span class="bg-rice border border-line rounded-xl px-3 py-2">福州魚丸</span>
+      <span class="bg-rice border border-line rounded-xl px-3 py-2">肉燕</span>
+      <span class="bg-rice border border-line rounded-xl px-3 py-2">鼎邊糊</span>
+      <span class="bg-rice border border-line rounded-xl px-3 py-2">撈化</span>
+      <span class="bg-rice border border-line rounded-xl px-3 py-2">荔枝肉</span>
+      <span class="bg-rice border border-line rounded-xl px-3 py-2">芋泥</span>
+    </div>
+  </div>
+</section>
+
+<section id="plan" class="tabpane">
+  <div id="daytabs" class="flex gap-2 overflow-x-auto pb-2 mb-3"></div>
+  <div id="daycontent"></div>
+</section>
+
+<section id="guide" class="tabpane">
+  <h2 class="text-2xl font-black mb-1">深度導覽</h2>
+  <p class="text-xs text-sub mb-4">福州古厝、老商埠、江岸夜色與爸媽同行的慢步調</p>
+  <div id="guidelist" class="space-y-4"></div>
+</section>
+
+<section id="lists" class="tabpane">
+  <h2 class="text-2xl font-black mb-3">清單</h2>
+  <div class="bg-card rounded-2xl shadow-soft p-4 border border-line mb-4">
+    <div class="text-sm font-bold mb-3"><i class="fa-solid fa-suitcase-rolling text-banyan text-lg"></i> 行前準備</div>
+    <div id="checklist" class="space-y-1"></div>
+    <div class="flex gap-2 mt-3">
+      <input id="newCheck" placeholder="新增項目..." class="flex-1 bg-rice rounded-xl px-3 py-2 border border-line text-sm">
+      <button type="button" onclick="addCheck()" class="bg-banyan text-white rounded-xl px-4 text-sm" aria-label="新增行前準備項目"><i class="fa-solid fa-plus"></i></button>
+    </div>
+  </div>
+  <div class="bg-card rounded-2xl shadow-soft p-4 border border-line">
+    <div class="text-sm font-bold mb-2"><i class="fa-solid fa-note-sticky text-gold text-lg"></i> 個人備忘錄</div>
+    <p class="text-[11px] text-sub mb-2">貼上網址會自動變成可點擊連結</p>
+    <textarea id="memo" rows="5" placeholder="自由輸入... 例如飯店、船票、餐廳連結"
+      class="w-full bg-rice rounded-xl px-3 py-2 border border-line text-sm mb-2"></textarea>
+    <button type="button" onclick="saveMemo()" class="bg-banyan text-white rounded-xl px-4 py-2 text-sm font-bold"><i class="fa-solid fa-floppy-disk"></i> 儲存</button>
+    <div id="memoView" class="mt-3 text-[13px] leading-relaxed space-y-2"></div>
+  </div>
+</section>
+
+<section id="info" class="tabpane">
+  <h2 class="text-2xl font-black mb-3">實用資訊</h2>
+  <div class="bg-card rounded-2xl shadow-soft p-4 border border-line mb-4">
+    <div class="text-sm font-bold mb-2"><i class="fa-solid fa-ship text-river text-lg"></i> 船與進城</div>
+    <ul class="text-[12.5px] text-ink space-y-2 leading-relaxed">
+      <li><b>路線：</b>南竿福澳港搭船至福州琅岐，再轉車進福州市區。</li>
+      <li><b>時間：</b>網頁先保留「以票券為準」，避免船班異動時誤導。</li>
+      <li><b>提醒：</b>抵達琅岐後先處理入境、網路、支付與叫車，再前往飯店。</li>
+    </ul>
+  </div>
+  <div class="bg-card rounded-2xl shadow-soft p-4 border border-line mb-4">
+    <div class="text-sm font-bold mb-2"><i class="fa-solid fa-cloud-sun text-gold text-lg"></i> 天氣與地圖</div>
+    <div class="space-y-2 text-[13px]">
+      <a href="https://weather.cma.cn/web/weather/58847.html" target="_blank" rel="noopener" class="flex items-center justify-between bg-rice rounded-xl px-3 py-2 border border-line">中國天氣網・福州 <i class="fa-solid fa-arrow-up-right-from-square text-sub"></i></a>
+      <a href="https://uri.amap.com/search?keyword=%E7%A6%8F%E5%B7%9E" target="_blank" rel="noopener" class="flex items-center justify-between bg-rice rounded-xl px-3 py-2 border border-line">高德地圖・福州搜尋 <i class="fa-solid fa-arrow-up-right-from-square text-sub"></i></a>
+    </div>
+  </div>
+  <div class="bg-card rounded-2xl shadow-soft p-4 border border-line mb-4">
+    <div class="text-sm font-bold mb-2"><i class="fa-solid fa-phone-volume text-cinnabar text-lg"></i> 緊急聯絡</div>
+    <div class="grid grid-cols-2 gap-2 text-[13px]">
+      <a href="tel:110" class="bg-rice rounded-xl px-3 py-3 border border-line"><div class="text-sub text-[11px]">公安</div><div class="font-bold text-lg">110</div></a>
+      <a href="tel:120" class="bg-rice rounded-xl px-3 py-3 border border-line"><div class="text-sub text-[11px]">急救</div><div class="font-bold text-lg">120</div></a>
+      <a href="tel:119" class="bg-rice rounded-xl px-3 py-3 border border-line"><div class="text-sub text-[11px]">火警</div><div class="font-bold text-lg">119</div></a>
+      <a href="tel:12345" class="bg-rice rounded-xl px-3 py-3 border border-line"><div class="text-sub text-[11px]">市民熱線</div><div class="font-bold text-lg">12345</div></a>
+    </div>
+  </div>
+  <div class="bg-card rounded-2xl shadow-soft p-4 border border-line">
+    <div class="text-sm font-bold mb-2"><i class="fa-solid fa-circle-info text-river text-lg"></i> 注意事項</div>
+    <ul class="text-[12.5px] text-ink space-y-2 leading-relaxed">
+      <li><b>證件：</b>台胞證、護照、船票與飯店訂房紀錄集中放在手機與紙本備份。</li>
+      <li><b>支付：</b>確認支付寶或微信支付綁卡；也準備少量人民幣現金。</li>
+      <li><b>爸媽同行：</b>每天保留午休或咖啡廳時間，雨天改百貨或博物館。</li>
+      <li><b>夏季：</b>福州六月底偏熱，防曬、帽子、電解質與薄外套都帶著。</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<nav class="bottom-nav fixed bottom-0 left-1/2 -translate-x-1/2 w-full bg-card/95 backdrop-blur border-t border-line flex justify-around pt-2 z-40">
+  <button data-tab="overview" class="navbtn active flex flex-col items-center gap-1 text-[11px] text-sub w-1/5"><span class="ic w-11 h-11 rounded-full flex items-center justify-center transition text-xl"><i class="fa-solid fa-house-chimney"></i></span>總覽</button>
+  <button data-tab="plan" class="navbtn flex flex-col items-center gap-1 text-[11px] text-sub w-1/5"><span class="ic w-11 h-11 rounded-full flex items-center justify-center transition text-xl"><i class="fa-solid fa-route"></i></span>行程</button>
+  <button data-tab="guide" class="navbtn flex flex-col items-center gap-1 text-[11px] text-sub w-1/5"><span class="ic w-11 h-11 rounded-full flex items-center justify-center transition text-xl"><i class="fa-solid fa-book-open"></i></span>導覽</button>
+  <button data-tab="lists" class="navbtn flex flex-col items-center gap-1 text-[11px] text-sub w-1/5"><span class="ic w-11 h-11 rounded-full flex items-center justify-center transition text-xl"><i class="fa-solid fa-list-check"></i></span>清單</button>
+  <button data-tab="info" class="navbtn flex flex-col items-center gap-1 text-[11px] text-sub w-1/5"><span class="ic w-11 h-11 rounded-full flex items-center justify-center transition text-xl"><i class="fa-solid fa-circle-info"></i></span>資訊</button>
+</nav>
+
+<div id="imageLightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="福州旅遊主視覺放大預覽" onclick="closeLightbox(event)">
+  <button type="button" class="lightbox-close" onclick="closeLightbox(event)" aria-label="關閉圖片預覽"><i class="fa-solid fa-xmark"></i></button>
+  <img src="assets/fuzhou-hero.png" alt="福州榕城慢遊主視覺放大版">
+</div>
+
+<script>
+const A = q => 'https://uri.amap.com/search?keyword=' + encodeURIComponent(q);
+const DIR = (from,to) => 'https://uri.amap.com/navigation?from=' + encodeURIComponent(from) + '&to=' + encodeURIComponent(to) + '&mode=car';
+
+const HOTELS = [
+  ['Day 1-2','上下杭附近','晚上可走上下杭、煙台山，白天去三坊七巷方便'],
+  ['Day 3-4','西禪寺附近','節奏放慢，安排寺院、公園、百貨與室內備案'],
+];
+
+const DAYS = [
+  {key:'D1',date:'06/27 六',city:'南竿・琅岐・福州',title:'搭船進城，晚上上下杭散步',alert:'船班與通關時間請以票券與港口公告為準，第一天不要排太緊。',seg:[
+    {type:'go',t:'上午',name:'南竿福澳港集合',stay:'—',note:'確認台胞證、船票、行李與網路方案。',map:'南竿福澳港'},
+    {type:'move',t:'船班',route:'南竿福澳港 → 福州琅岐',from:'南竿福澳港',to:'福州琅岐客運碼頭',opts:[
+      {means:'兩馬小三通船班',time:'以船票為準',fare:'依票券',note:'建議提前到港，預留通關與行李時間'}
+    ]},
+    {type:'move',t:'抵達後',route:'琅岐 → 上下杭飯店',from:'福州琅岐客運碼頭',to:'上下杭歷史文化街區',opts:[
+      {means:'叫車或包車',time:'約 60-90 分',fare:'依當日路況',note:'爸媽同行建議直接叫車進城'}
+    ]},
+    {type:'spot',t:'下午',name:'入住上下杭附近飯店',stay:'休息',note:'先補水、整理行李，晚上再出門。',map:'上下杭歷史文化街區'},
+    {type:'spot',t:'晚上',name:'上下杭歷史文化街區',stay:'1.5-2h',note:'老商埠街屋、會館與河道夜色，很適合第一晚暖身。',map:'上下杭歷史文化街區'},
+    {type:'meal',t:'晚餐',name:'福州小吃初體驗',stay:'1h',note:'魚丸、肉燕、撈化、荔枝肉先挑幾樣，不要吃太撐。',map:'上下杭 美食'},
+  ]},
+  {key:'D2',date:'06/28 日',city:'福州老城',title:'三坊七巷、南后街與煙台山夜色',seg:[
+    {type:'meal',t:'早餐',name:'鍋邊糊或鼎邊糊',stay:'45m',note:'清淡熱食適合爸媽，搭配海蠣餅或魚丸湯。',map:'福州 鍋邊糊'},
+    {type:'spot',t:'上午',name:'三坊七巷',stay:'2.5h',note:'從南后街慢慢走進坊巷，看白牆灰瓦、馬鞍牆與名人故居。',map:'三坊七巷'},
+    {type:'meal',t:'午餐',name:'南后街周邊福州菜',stay:'1h',note:'可安排荔枝肉、醉排骨、芋泥、佛跳牆小份。',map:'南后街 福州菜'},
+    {type:'spot',t:'下午',name:'林則徐紀念館或于山',stay:'1.5h',note:'天熱就選室內紀念館；想散步再去于山。',map:'林則徐紀念館'},
+    {type:'spot',t:'傍晚',name:'煙台山歷史風貌區',stay:'2h',note:'洋樓、坡道、咖啡館與夜景，傍晚去最舒服。',map:'煙台山歷史風貌區'},
+    {type:'meal',t:'晚上',name:'煙台山或倉山晚餐',stay:'1h',note:'吃完可看閩江夜景，累了就直接叫車回飯店。',map:'煙台山 美食'},
+  ]},
+  {key:'D3',date:'06/29 一',city:'上下杭・西禪寺',title:'換飯店，西禪寺周邊慢遊',seg:[
+    {type:'go',t:'上午',name:'退房與行李轉移',stay:'—',note:'上午不安排遠點，保留移動與休息時間。',map:'上下杭歷史文化街區'},
+    {type:'move',t:'中午',route:'上下杭 → 西禪寺附近飯店',from:'上下杭歷史文化街區',to:'福州西禪寺',opts:[
+      {means:'叫車',time:'約 20-35 分',fare:'依路況',note:'帶行李最省力'}
+    ]},
+    {type:'meal',t:'午餐',name:'飯店附近簡單午餐',stay:'1h',note:'先找近的，下午再進寺院。',map:'西禪寺 美食'},
+    {type:'spot',t:'下午',name:'西禪寺',stay:'1.5-2h',note:'寺院腹地大，適合爸媽慢慢走；注意防曬與補水。',map:'福州西禪寺'},
+    {type:'spot',t:'傍晚',name:'西湖公園或飯店休息',stay:'1h',note:'體力好就去公園，天熱或下雨就回飯店。',map:'福州西湖公園'},
+    {type:'spot',t:'晚上',name:'附近百貨公司',stay:'1.5h',note:'晚餐、冷氣與採買一次解決。',map:'福州 西禪寺 百貨'},
+  ]},
+  {key:'D4',date:'06/30 二',city:'福州慢遊',title:'公園、博物館、百貨備案日',seg:[
+    {type:'spot',t:'上午',name:'西湖公園',stay:'1.5h',note:'清晨或上午較舒服，環湖慢走即可。',map:'福州西湖公園'},
+    {type:'spot',t:'上午',name:'福建博物院',stay:'1.5h',note:'雨天與高溫日的好選擇，節奏比戶外穩。',map:'福建博物院'},
+    {type:'meal',t:'午餐',name:'東百中心或三坊七巷周邊',stay:'1h',note:'爸媽同行可選商場餐廳，座位與空調比較穩。',map:'福州 東百中心'},
+    {type:'spot',t:'下午',name:'東百中心／萬象城／蘇寧廣場',stay:'2h',note:'依飯店距離挑一間，買伴手禮、休息、喝茶。',map:'福州 萬象城'},
+    {type:'meal',t:'晚上',name:'福州菜收尾',stay:'1h',note:'安排一餐正式一點的福州菜，吃佛跳牆或海鮮。',map:'福州 福州菜'},
+  ]},
+  {key:'D5',date:'07/01 三',city:'福州・琅岐・南竿',title:'伴手禮與回程船',alert:'回程是週三船班，請前一晚確認碼頭、開船時間與叫車時間。',seg:[
+    {type:'meal',t:'上午',name:'飯店早餐與退房',stay:'1h',note:'行李先整理好，證件與船票放隨身包。',map:'福州 西禪寺'},
+    {type:'spot',t:'上午',name:'伴手禮採買',stay:'1h',note:'魚丸、肉燕、茶點與乾貨依檢疫規定挑選，避免帶肉類製品。',map:'福州 伴手禮'},
+    {type:'move',t:'中午前後',route:'福州市區 → 琅岐碼頭',from:'福州西禪寺',to:'福州琅岐客運碼頭',opts:[
+      {means:'叫車或包車',time:'約 60-90 分',fare:'依當日路況',note:'預留塞車與通關時間'}
+    ]},
+    {type:'go',t:'回程船',name:'福州琅岐 → 南竿福澳港',stay:'—',note:'依船票時間報到，回到馬祖後再銜接後續交通。',map:'福州琅岐客運碼頭'},
+  ]},
+];
+
+const GUIDE = [
+  {name:'三坊七巷',sub:'福州老城最核心的坊巷肌理',map:'三坊七巷',body:'三坊七巷保留大量明清至近代街巷格局，白牆、灰瓦、馬鞍牆與深宅院落很有福州辨識度。建議上午去，人少、光線也比較適合拍照。'},
+  {name:'上下杭',sub:'閩江邊的老商埠與會館街區',map:'上下杭歷史文化街區',body:'上下杭曾是福州商貿往來的重要地帶，街區裡能看到商行、會館與碼頭文化痕跡。夜間燈光溫和，第一晚安排在這裡很順。'},
+  {name:'煙台山',sub:'倉山坡地上的洋樓與江岸夜色',map:'煙台山歷史風貌區',body:'煙台山有近代外國領事館、教堂、學校與洋樓聚落，現在多了咖啡、選物和餐廳。傍晚開始走，比中午舒適，也更有氣氛。'},
+  {name:'西禪寺',sub:'爸媽同行適合放慢腳步的寺院',map:'福州西禪寺',body:'西禪寺空間開闊，適合午後慢走。六月底福州天氣熱，建議安排在下午較晚時段，並把百貨或飯店休息排在後面。'},
+  {name:'西湖公園與福建博物院',sub:'戶外與室內備案可以連著排',map:'福建博物院',body:'西湖公園適合早上散步，福建博物院適合高溫或下雨時移動進室內。兩者距離近，對家庭旅遊很友善。'},
+];
+
+const DEFAULT_CHECK = [
+  '台胞證與護照',
+  '南竿到琅岐船票',
+  '回程 07/01 週三船票',
+  '飯店訂房確認',
+  '人民幣現金',
+  '支付寶或微信支付',
+  '中國可用網卡或漫遊',
+  '行動電源與充電線',
+  '爸媽常備藥與健保資訊',
+  '薄外套、帽子、防曬',
+  '雨傘或輕便雨衣',
+  '伴手禮檢疫規定確認'
+];
+
+const ICON = {
+  meal:['fa-utensils','bg-gold'],
+  spot:['fa-location-dot','bg-banyan'],
+  go:['fa-person-walking-luggage','bg-cinnabar'],
+  move:['fa-car-side','bg-river']
+};
+
+function openLightbox(){
+  document.getElementById('imageLightbox').classList.add('open');
+  document.body.classList.add('modal-open');
+}
+function closeLightbox(e){
+  if(e && e.target.closest && e.target.closest('img')) return;
+  document.getElementById('imageLightbox').classList.remove('open');
+  document.body.classList.remove('modal-open');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+
+document.querySelectorAll('.navbtn').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.navbtn').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.tabpane').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  document.getElementById(b.dataset.tab).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+document.getElementById('hotels').innerHTML = HOTELS.map(h=>
+  `<div class="flex items-start gap-2">
+    <span class="text-cinnabar font-bold text-[11px] mt-0.5 w-16 shrink-0">${h[0]}</span>
+    <span><b>${h[1]}</b><span class="text-sub"> ・${h[2]}</span></span>
+  </div>`).join('');
+
+let curDay = 0;
+function renderDayTabs(){
+  document.getElementById('daytabs').innerHTML = DAYS.map((d,i)=>
+    `<button onclick="selDay(${i})" class="shrink-0 px-3 py-2 rounded-xl text-[12px] border ${i===curDay?'bg-banyan text-white border-banyan':'bg-card text-sub border-line'}">
+      <div class="font-bold text-sm">${d.key}</div><div class="text-[10px] ${i===curDay?'text-white/80':'text-sub'}">${d.date.slice(0,5)}</div>
+    </button>`).join('');
+}
+function selDay(i){curDay=i;renderDayTabs();renderDay();}
+function goDay(i){selDay(i);document.querySelector('.navbtn[data-tab="plan"]').click();}
+function renderGlance(){
+  document.getElementById('ovglance').innerHTML = DAYS.map((d,i)=>`
+    <button onclick="goDay(${i})" class="w-full flex items-center gap-3 text-left py-2.5 px-3 border-b border-line last:border-0">
+      <span class="text-cinnabar font-bold text-[13px] w-7 shrink-0">${d.key}</span>
+      <span class="text-[11px] text-sub w-12 shrink-0">${d.date.slice(0,5)}</span>
+      <span class="text-[13px] flex-1">${d.title}</span>
+      <i class="fa-solid fa-chevron-right text-sub text-[10px]"></i>
+    </button>`).join('');
+}
+
+function moveCard(s){
+  const opts = s.opts.map(o=>`
+    <div class="mt-2 first:mt-0">
+      <div class="flex items-center justify-between">
+        <span class="text-[13px] font-bold text-ink"><i class="fa-solid fa-circle text-[5px] text-river align-middle mr-1"></i>${o.means}</span>
+        <span class="text-[12px] text-river font-bold whitespace-nowrap ml-2">${o.time}</span>
+      </div>
+      <div class="text-[12px] text-sub mt-0.5">費用 ${o.fare}${o.note?'　・　'+o.note:''}</div>
+    </div>`).join('<div class="border-t border-dashed border-line my-2"></div>');
+  return `<div class="relative pl-11 pb-4">
+    <div class="absolute left-0 top-0 w-9 h-9 rounded-full flex items-center justify-center text-white text-base bg-river"><i class="fa-solid fa-car-side"></i></div>
+    <div class="bg-mist/60 border border-line rounded-2xl px-3 py-2.5 shadow-soft">
+      <div class="flex items-center gap-2 mb-1.5">
+        ${s.t?`<span class="text-[12px] font-bold text-ink bg-card border border-line rounded-full px-2 py-0.5">${s.t}</span>`:''}
+        <span class="text-[13px] font-bold">${s.route}</span>
+      </div>${opts}
+      ${s.from?`<a href="${DIR(s.from,s.to)}" target="_blank" rel="noopener" class="flex items-center justify-center gap-1 text-[12px] text-white bg-banyan rounded-lg py-1.5 mt-2.5 font-bold"><i class="fa-solid fa-route"></i> 高德查路線</a>`:''}
+    </div>
+  </div>`;
+}
+function spotCard(s){
+  const ic = ICON[s.type] || ICON.spot;
+  const stay = s.stay && s.stay !== '—' ? `<span class="text-[11px] text-sub bg-black/5 rounded-full px-2 py-0.5 whitespace-nowrap ml-2">停留 ${s.stay}</span>` : '';
+  const mapBtn = s.map ? `<a href="${A(s.map)}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-[11px] text-banyan bg-rice border border-line rounded-full px-2 py-0.5 mt-1.5"><i class="fa-solid fa-location-dot"></i> 地圖</a>` : '';
+  return `<div class="relative pl-11 pb-4">
+    <div class="absolute left-0 top-0 w-9 h-9 rounded-full flex items-center justify-center text-white text-base ${ic[1]}"><i class="fa-solid ${ic[0]}"></i></div>
+    <div class="bg-card border border-line rounded-2xl px-3 py-2.5 shadow-soft">
+      <div class="flex items-start justify-between">
+        <div class="flex-1">
+          ${s.t?`<span class="text-[13px] font-bold text-cinnabar mr-2">${s.t}</span>`:''}
+          <span class="text-[14px] font-bold">${s.name}</span>
+        </div>${stay}
+      </div>
+      ${s.note?`<div class="text-[12px] text-sub mt-1">${s.note}</div>`:''}
+      ${mapBtn}
+    </div>
+  </div>`;
+}
+function renderDay(){
+  const d = DAYS[curDay];
+  const rows = d.seg.map(s=>s.type==='move'?moveCard(s):spotCard(s)).join('');
+  const al = d.alert ? `<div class="bg-cinnabar/10 border border-cinnabar/30 rounded-xl px-3 py-2 text-[12px] text-cinnabar mb-3"><i class="fa-solid fa-circle-exclamation mr-1"></i>${d.alert}</div>` : '';
+  document.getElementById('daycontent').innerHTML =
+    `<div class="flex items-center gap-2 mb-3">
+      <span class="text-3xl font-black">${d.key}</span>
+      <span class="flex-1 h-[2px] bg-ink/80"></span>
+      <span class="text-[12px] font-bold text-sub">${d.city}</span>
+    </div>
+    <div class="text-base font-bold mb-3">${d.date} ・ ${d.title}</div>${al}
+    <div class="relative tl">${rows}</div>`;
+}
+
+document.getElementById('guidelist').innerHTML = GUIDE.map(g=>`
+  <article class="bg-card rounded-2xl shadow-soft border border-line overflow-hidden">
+    <div class="px-4 py-4">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <h3 class="text-xl font-black">${g.name}</h3>
+          <div class="text-[12px] text-cinnabar mb-2">${g.sub}</div>
+        </div>
+        <a href="${A(g.map)}" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-banyan text-white flex items-center justify-center shrink-0" aria-label="開啟 ${g.name} 地圖"><i class="fa-solid fa-location-arrow"></i></a>
+      </div>
+      <p class="text-[13px] leading-relaxed text-ink">${g.body}</p>
+    </div>
+  </article>`).join('');
+
+let _mem = {};
+const _hasLS = (()=>{try{localStorage.setItem('__t','1');localStorage.removeItem('__t');return true;}catch(e){return false;}})();
+const LS = k => {try{return JSON.parse((_hasLS?localStorage.getItem(k):_mem[k])||'null');}catch(e){return null;}};
+const SET = (k,v) => {try{_hasLS?localStorage.setItem(k,JSON.stringify(v)):(_mem[k]=JSON.stringify(v));}catch(e){_mem[k]=JSON.stringify(v);}};
+function escapeHTML(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function getChecks(){return LS('checks') || DEFAULT_CHECK.map(t=>({t,done:false}));}
+function renderCheck(){
+  const c = getChecks();
+  document.getElementById('checklist').innerHTML = c.map((x,i)=>{
+    const text = escapeHTML(x.t);
+    return `<label class="flex items-center gap-2 py-1.5 text-[13px]">
+      <input type="checkbox" ${x.done?'checked':''} onchange="toggleCheck(${i})" class="w-4 h-4 accent-[#496a50]">
+      <span class="${x.done?'line-through text-sub':''}">${text}</span>
+      <button type="button" onclick="event.preventDefault();event.stopPropagation();delCheck(${i})" class="ml-auto text-sub text-[11px]" aria-label="刪除 ${text}"><i class="fa-solid fa-xmark"></i></button>
+    </label>`;
+  }).join('');
+}
+function toggleCheck(i){const c=getChecks();c[i].done=!c[i].done;SET('checks',c);renderCheck();}
+function delCheck(i){const c=getChecks();c.splice(i,1);SET('checks',c);renderCheck();}
+function addCheck(){const v=document.getElementById('newCheck').value.trim();if(!v)return;const c=getChecks();c.push({t:v,done:false});SET('checks',c);document.getElementById('newCheck').value='';renderCheck();}
+const memoEl = document.getElementById('memo');
+memoEl.value = LS('memo') || '';
+function saveMemo(){SET('memo',memoEl.value);renderMemo();}
+function renderMemo(){
+  const txt = LS('memo') || '';
+  if(!txt){document.getElementById('memoView').innerHTML='';return;}
+  document.getElementById('memoView').innerHTML = txt.split('\n').map(line=>{
+    if(!line.trim()) return '';
+    const m = line.match(/(https?:\/\/[^\s]+)/);
+    if(m){
+      const url = m[1];
+      const label = escapeHTML(line.replace(url,'').trim() || '開啟連結');
+      return `<a href="${escapeHTML(url)}" target="_blank" rel="noopener" class="flex items-center gap-2 bg-rice border border-line rounded-xl px-3 py-2 text-banyan"><i class="fa-solid fa-link"></i> ${label} <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-auto"></i></a>`;
+    }
+    return `<div>${escapeHTML(line)}</div>`;
+  }).join('');
+}
+document.getElementById('newCheck').addEventListener('keydown',e=>{if(e.key==='Enter')addCheck();});
+
+renderDayTabs();
+renderDay();
+renderGlance();
+renderCheck();
+renderMemo();
+</script>
+</body>
+</html>
