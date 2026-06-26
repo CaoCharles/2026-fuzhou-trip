@@ -99,12 +99,14 @@ tailwind.config={theme:{extend:{
     <div class="bg-card rounded-2xl shadow-soft p-4 border border-line">
       <div class="text-xs text-sub mb-1"><i class="fa-solid fa-ship text-river text-base"></i> 去程</div>
       <div class="text-lg font-black">06/27 六</div>
-      <div class="text-[12px] text-sub mt-1">南竿福澳港 → 福州琅岐</div>
+      <div class="text-[12px] text-sub mt-1">福澳 08:40 開航 → 琅岐</div>
+      <div class="text-[11px] text-cinnabar mt-1">07:00-08:00 領票／08:10-08:30 通關</div>
     </div>
     <div class="bg-card rounded-2xl shadow-soft p-4 border border-line">
       <div class="text-xs text-sub mb-1"><i class="fa-solid fa-ship text-cinnabar text-base"></i> 回程</div>
       <div class="text-lg font-black">07/01 三</div>
-      <div class="text-[12px] text-sub mt-1">福州琅岐 → 南竿福澳港</div>
+      <div class="text-[12px] text-sub mt-1">琅岐 13:30 開航 → 福澳</div>
+      <div class="text-[11px] text-cinnabar mt-1">建議提前 1-1.5h 到碼頭</div>
     </div>
   </div>
 
@@ -167,9 +169,12 @@ tailwind.config={theme:{extend:{
   <div class="bg-card rounded-2xl shadow-soft p-4 border border-line mb-4">
     <div class="text-sm font-bold mb-2"><i class="fa-solid fa-ship text-river text-lg"></i> 船與進城</div>
     <ul class="text-[12.5px] text-ink space-y-2 leading-relaxed">
-      <li><b>路線：</b>南竿福澳港搭船至福州琅岐，再轉車進福州市區。</li>
-      <li><b>時間：</b>網頁先保留「以票券為準」，避免船班異動時誤導。</li>
-      <li><b>提醒：</b>抵達琅岐後先處理入境、網路、支付與叫車，再前往飯店。</li>
+      <li><b>06/27 去程：</b>福澳 08:40 開航；售票／領票 07:00-08:00；通關 08:10-08:30。</li>
+      <li><b>07/01 回程：</b>琅岐 13:30 開航，依正常時刻表行駛；建議 11:30-12:00 抵達碼頭。</li>
+      <li><b>票價：</b>小三通琅岐航線全票 NT$1000／人民幣 220；兒童票 NT$500／人民幣 110。</li>
+      <li><b>提醒：</b>琅岐回程請提前 1-1.5 小時到碼頭購票／領票，並於開航前 30 分鐘完成通關。</li>
+      <li><b>進城：</b>抵達琅岐後先處理入境、網路、支付與叫車，再前往飯店。</li>
+      <li><b>來源：</b><a href="https://www.mtha.gov.tw/mtha/Monthinfo.aspx" target="_blank" rel="noopener" class="text-banyan underline">連江縣港務處航班資訊</a>、<a href="https://www.matsu-news.gov.tw/news/article/241799" target="_blank" rel="noopener" class="text-banyan underline">6/16-6/30 琅岐航班異動</a>。</li>
     </ul>
   </div>
   <div class="bg-card rounded-2xl shadow-soft p-4 border border-line mb-4">
@@ -224,10 +229,11 @@ const HOTELS = [
 ];
 
 const DAYS = [
-  {key:'D1',date:'06/27 六',city:'南竿・琅岐・福州',title:'搭船進城，晚上上下杭散步',alert:'船班與通關時間請以票券與港口公告為準，第一天不要排太緊。',seg:[
-    {type:'go',t:'上午',name:'南竿福澳港集合',stay:'—',note:'確認台胞證、船票、行李與網路方案。',map:'南竿福澳港'},
+  {key:'D1',date:'06/27 六',city:'南竿・琅岐・福州',title:'搭船進城，晚上上下杭散步',alert:'06/27 琅岐航班受潮水影響調整：福澳 08:40 開航，請抓 07:00 前後到港。',seg:[
+    {type:'go',t:'07:00',name:'南竿福澳港售票／領票',stay:'1h',note:'07:00-08:00 售票／領票；確認台胞證、船票、行李與網路方案。',map:'南竿福澳港'},
+    {type:'go',t:'08:10',name:'福澳港通關',stay:'20m',note:'08:10-08:30 通關，開航前不要離開候船區。',map:'南竿福澳港'},
     {type:'move',t:'船班',route:'南竿福澳港 → 福州琅岐',from:'南竿福澳港',to:'福州琅岐客運碼頭',opts:[
-      {means:'兩馬小三通船班',time:'以船票為準',fare:'依票券',note:'建議提前到港，預留通關與行李時間'}
+      {means:'兩馬小三通船班',time:'08:40 開航',fare:'全票 NT$1000／RMB 220',note:'航程約 90 分鐘，依現場與票券為準'}
     ]},
     {type:'move',t:'抵達後',route:'琅岐 → 春日里民宿',from:'福州琅岐客運碼頭',to:'福州 寻见 春日里 The Beauty of The East',opts:[
       {means:'叫車或包車',time:'約 60-90 分',fare:'依當日路況',note:'爸媽同行建議直接叫車進城'}
@@ -239,7 +245,7 @@ const DAYS = [
   {key:'D2',date:'06/28 日',city:'福州老城',title:'三坊七巷、南后街與煙台山夜色',seg:[
     {type:'meal',t:'早餐',name:'鍋邊糊或鼎邊糊',stay:'45m',note:'清淡熱食適合爸媽，搭配海蠣餅或魚丸湯。',map:'福州 鍋邊糊'},
     {type:'spot',t:'上午',name:'三坊七巷',stay:'2.5h',note:'從南后街慢慢走進坊巷，看白牆灰瓦、馬鞍牆與名人故居。',map:'三坊七巷'},
-    {type:'meal',t:'午餐',name:'南后街周邊福州菜',stay:'1h',note:'可安排荔枝肉、醉排骨、芋泥、佛跳牆小份。',map:'南后街 福州菜'},
+    {type:'meal',t:'午餐',name:'芃膳素食（三坊七巷店）',stay:'1h',note:'11:00-13:30、17:00-20:30；均消約 ¥45／人，地址：鼓樓區南街街道營房里 6-14-15 號。',map:'芃膳素食 三坊七巷店 鼓楼区南街街道营房里6-14-15号'},
     {type:'spot',t:'下午',name:'林則徐紀念館或于山',stay:'1.5h',note:'天熱就選室內紀念館；想散步再去于山。',map:'林則徐紀念館'},
     {type:'spot',t:'傍晚',name:'煙台山歷史風貌區',stay:'2h',note:'洋樓、坡道、咖啡館與夜景，傍晚去最舒服。',map:'煙台山歷史風貌區'},
     {type:'meal',t:'晚上',name:'煙台山或倉山晚餐',stay:'1h',note:'吃完可看閩江夜景，累了就直接叫車回飯店。',map:'煙台山 美食'},
@@ -262,13 +268,13 @@ const DAYS = [
     {type:'spot',t:'下午',name:'東百中心／萬象城／蘇寧廣場',stay:'2h',note:'依飯店距離挑一間，買伴手禮、休息、喝茶。',map:'福州 萬象城'},
     {type:'meal',t:'晚上',name:'福州菜收尾',stay:'1h',note:'安排一餐正式一點的福州菜，吃佛跳牆或海鮮。',map:'福州 福州菜'},
   ]},
-  {key:'D5',date:'07/01 三',city:'福州・琅岐・南竿',title:'伴手禮與回程船',alert:'回程是週三船班，請前一晚確認碼頭、開船時間與叫車時間。',seg:[
+  {key:'D5',date:'07/01 三',city:'福州・琅岐・南竿',title:'伴手禮與 13:30 回程船',alert:'07/01 回程依正常時刻表：琅岐 13:30 開航。請前一晚再次確認碼頭、叫車與票券。',seg:[
     {type:'meal',t:'上午',name:'民宿早餐與退房',stay:'1h',note:'行李先整理好，證件與船票放隨身包。',map:'福州 恒大天璟 ICC 宝龙 苏宁 三坊七巷 烟台山 华润'},
     {type:'spot',t:'上午',name:'伴手禮採買',stay:'1h',note:'魚丸、肉燕、茶點與乾貨依檢疫規定挑選，避免帶肉類製品。',map:'福州 伴手禮'},
-    {type:'move',t:'中午前後',route:'兩房民宿 → 琅岐碼頭',from:'福州 恒大天璟 ICC 宝龙 苏宁 三坊七巷 烟台山 华润',to:'福州琅岐客運碼頭',opts:[
-      {means:'叫車或包車',time:'約 60-90 分',fare:'依當日路況',note:'預留塞車與通關時間'}
+    {type:'move',t:'11:00',route:'兩房民宿 → 琅岐碼頭',from:'福州 恒大天璟 ICC 宝龙 苏宁 三坊七巷 烟台山 华润',to:'福州琅岐客運碼頭',opts:[
+      {means:'叫車或包車',time:'約 60-90 分',fare:'依當日路況',note:'建議 11:30-12:00 抵達碼頭'}
     ]},
-    {type:'go',t:'回程船',name:'福州琅岐 → 南竿福澳港',stay:'—',note:'依船票時間報到，回到馬祖後再銜接後續交通。',map:'福州琅岐客運碼頭'},
+    {type:'go',t:'13:30',name:'福州琅岐 → 南竿福澳港',stay:'約 90m',note:'琅岐 13:30 開航；回程請提前 1-1.5 小時到碼頭，開航前 30 分鐘完成通關。',map:'福州琅岐客運碼頭'},
   ]},
 ];
 
